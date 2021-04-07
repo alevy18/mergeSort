@@ -441,3 +441,17 @@ do{
 
 LibraryInventory.whatDoYouHave()
 
+
+
+class Bank {
+    var balance: Double?
+    
+    init(balance: Double?){
+        self.balance = balance
+    }
+    
+}
+
+var myBank = Bank(balance: 50)
+
+print(myBank.balance)

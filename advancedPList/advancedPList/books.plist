@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>bookName</key>
+		<string>Harry Potter</string>
+		<key>ISBN</key>
+		<string>12345678</string>
+		<key>Author</key>
+		<string>JK Rowling</string>
+	</dict>
+	<dict>
+		<key>bookName</key>
+		<string>Lord of the rings</string>
+		<key>ISBN</key>
+		<string>657846579870</string>
+		<key>Author</key>
+		<string>Tolkein</string>
+	</dict>
+</array>
+</plist>
