@@ -23,7 +23,11 @@ class ToDoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var isCOmpletedSwitch: SmartSegmentControl!
    
-    @IBOutlet weak var deadlineBtn: UIButton!
+    
+    func disableScreenElements(){
+        descriptionTextView.isEditable = false
+        deadlineTxtField.isUserInteractionEnabled = false
+    }
     
     
     @IBAction func didFinishTask(_ sender: SmartSegmentControl) {

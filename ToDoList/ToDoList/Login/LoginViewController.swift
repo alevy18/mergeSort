@@ -20,21 +20,16 @@ class LoginViewController: BaseViewController{
         usernameTF.delegate = self
         passwordTF.delegate = self
         
-//        let tap = UITapGestureRecognizer.init(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-//        view.addGestureRecognizer(tap)
-        
+        //usernameTF.insertTextPlaceholder(with: CGSize.init(width: 2, height: 10))
+     
     }
-   
     
     @IBAction func login(_ sender: UIButton) {
         let st = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = st.instantiateViewController(identifier: ViewControllerConstants.CListViewController)
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-//    @objc func dismissKeyboard(){
-//        view.endEditing(true)
-//    }
+
     
 }
 
@@ -58,7 +53,16 @@ extension LoginViewController: UITextFieldDelegate{
             }
             lvm.editPassword(changeTo: textField.text!)
         }
-        
-        
+
     }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
 }

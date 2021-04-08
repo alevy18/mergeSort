@@ -9,7 +9,7 @@ import Foundation
 
 class LoginViewModel {
     
-    var loginStuff = login.init()
+    lazy var loginStuff = login.init()
     
     
     func editPassword(changeTo: String){

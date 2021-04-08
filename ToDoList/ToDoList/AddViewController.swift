@@ -11,7 +11,7 @@ protocol fillToDoCell{
     func fillCell(title: String, description: String, deadline: String)
 }
 
-class AddViewController: BaseViewController, UITextFieldDelegate {
+class AddViewController: BaseViewController {
     
     var delegate: fillToDoCell?
     
@@ -28,30 +28,35 @@ class AddViewController: BaseViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleText.delegate = self
+        descriptionText.delegate = self
+        deadlineText.delegate = self
         
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard1))
         deadlineText.addGestureRecognizer(tap1)
 
     }
+   
     
     @IBAction func add(_ sender: UIButton) {
-        
         let arrOfVcs = navigationController?.viewControllers
         for vc in arrOfVcs!{
             if vc is ListViewController {
-                //(vc as! ListViewController).myToDoList.addToDo(title: titleText.text ?? "", description: descriptionText.text ?? "", deadline: deadlineText.text ?? "")
                 delegate?.fillCell(title: titleText.text ?? "", description: descriptionText.text ?? "", deadline: deadlineText.text ?? "")
                 navigationController?.popToViewController(vc, animated: true)
             }
         }
     }
+
+}
+
+
+extension AddViewController: UITextFieldDelegate{
     
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return true
     }
-    
-    
     
     @objc func dismissKeyboard1(){
         view.endEditing(true)

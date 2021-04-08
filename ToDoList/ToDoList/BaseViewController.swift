@@ -24,9 +24,8 @@ class BaseViewController: UIViewController {
         
     }
     
-    @IBAction func closeKeyboardOnReturn(_ sender: UITextField) {
-        sender.resignFirstResponder()
+    deinit{
+        
     }
-
     
 }

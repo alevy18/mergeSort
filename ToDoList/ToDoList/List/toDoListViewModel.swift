@@ -9,7 +9,7 @@ import Foundation
 
 class ToDoList {
     
-    var toDoArray: [ToDo] = []
+   lazy var toDoArray: [ToDo] = []
     
     func addToDo(title: String, description: String, deadline: String){
         let newTask = ToDo.init()
@@ -25,15 +25,15 @@ class ToDoList {
     }
     
     func getTask(index: Int) -> String{
-        return toDoArray[index].title ?? "NA"
+        return toDoArray[index].title
     }
     
     func getDescription(index: Int) -> String {
-        return toDoArray[index].description ?? "NA"
+        return toDoArray[index].description
     }
     
     func getDeadline(index: Int) -> String{
-        return toDoArray[index].deadline ?? "NA"
+        return toDoArray[index].deadline 
     }
     
     func isComplete(index: Int) -> Bool{
