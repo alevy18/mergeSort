@@ -8,9 +8,7 @@
 import UIKit
 
 class SmartSegmentControl: UISegmentedControl {
-    
+
     var model: Any?
-    
-    
 
 }

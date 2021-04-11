@@ -9,14 +9,23 @@ import Foundation
 
 class ToDoList {
     
-   lazy var toDoArray: [ToDo] = []
+   private lazy var toDoArray: [ToDo] = []
     
-    func addToDo(title: String, description: String, deadline: String){
+    //adds or edits contents of toDoArray
+    func addToDo(title: String, description: String, deadline: String, index: Int?){
         let newTask = ToDo.init()
         newTask.title = title
         newTask.description = description
         newTask.deadline = deadline
-        toDoArray.append(newTask)
+        if index == nil{
+            toDoArray.append(newTask)
+        }else{
+            toDoArray[index!] = newTask
+        }
+    }
+    
+    func deleteToDo(index: Int){
+        toDoArray.remove(at: index)
     }
     
     

@@ -145,7 +145,7 @@
                                                         <segment title="Yes"/>
                                                     </segments>
                                                     <connections>
-                                                        <action selector="didFinishTask:" destination="fQL-zF-2gi" eventType="valueChanged" id="le6-ns-G2G"/>
+                                                        <action selector="didFinishTask:" destination="fQL-zF-2gi" eventType="valueChanged" id="KbY-Ts-nhu"/>
                                                     </connections>
                                                 </segmentedControl>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KkJ-pm-MY9">
@@ -192,7 +192,7 @@
                                         <connections>
                                             <outlet property="deadlineTxtField" destination="KkJ-pm-MY9" id="eeM-zZ-hIl"/>
                                             <outlet property="descriptionTextView" destination="AaF-3B-03n" id="qNL-OQ-Fep"/>
-                                            <outlet property="isCOmpletedSwitch" destination="V8k-uY-Xal" id="20T-dt-4hq"/>
+                                            <outlet property="isCOmpletedSwitch" destination="V8k-uY-Xal" id="Xta-eu-GZ1"/>
                                             <outlet property="titleLbl" destination="ric-QO-Z7G" id="WTV-6I-6nJ"/>
                                         </connections>
                                     </tableViewCell>
@@ -228,7 +228,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-te-PDb">
                                 <rect key="frame" x="178" y="414" width="58" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" systemColor="systemTealColor"/>
+                                </state>
                                 <connections>
                                     <action selector="add:" destination="q0F-Yb-sSm" eventType="touchUpInside" id="fcE-Q2-Ujp"/>
                                 </connections>
@@ -317,6 +319,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="add_editButton" destination="cAP-te-PDb" id="USy-LI-q3L"/>
                         <outlet property="datpicker" destination="ZQF-I6-K7j" id="Ach-ns-wd4"/>
                         <outlet property="deadlineText" destination="sr8-gG-t9k" id="vq8-6B-Yv7"/>
                         <outlet property="descriptionText" destination="fku-fi-hu6" id="pRx-nV-Ksj"/>

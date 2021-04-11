@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +18,21 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = .gray
     }
     
-    
+    //dismisses keyboard
     @objc func dismissKeyboard(){
         view.endEditing(true)
-        
     }
+    
+    //Closes keyboard when return is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return true
+    }
+    
     
     deinit{
         
     }
+
     
 }

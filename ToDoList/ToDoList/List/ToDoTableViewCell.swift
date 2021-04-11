@@ -30,14 +30,39 @@ class ToDoTableViewCell: UITableViewCell {
     }
     
     
+    
     @IBAction func didFinishTask(_ sender: SmartSegmentControl) {
-        var model = sender.model as? ToDo
+        let model = sender.model as? ToDo
         if sender.selectedSegmentIndex == 0{
             model?.complete = false
         }else{
             model?.complete = true
         }
         delegate?.changeCompleteStatus(task: (model?.title)!)
+        
     }
+    
+    func setCell(toDoObj: ToDo){
+        titleLbl.text = toDoObj.title
+        descriptionTextView.text = toDoObj.description
+        deadlineTxtField.text = toDoObj.deadline
+        isCOmpletedSwitch.model = toDoObj
+        
+        
+        //darkens cell if marked complete
+        if toDoObj.complete == true{
+            isCOmpletedSwitch.selectedSegmentIndex = 1
+            contentView.backgroundColor = UIColor.init(hue: 0.5, saturation: 0.26, brightness: 0.76, alpha: 0.5)
+        }else{
+            isCOmpletedSwitch.selectedSegmentIndex = 0
+            contentView.backgroundColor = UIColor.init(hue: 0.5, saturation: 0.26, brightness: 0.76, alpha: 1.0)
+        }
+        
+        
+        //makes TextView and TF uneditable
+        disableScreenElements()
+        
+    }
+    
     
 }

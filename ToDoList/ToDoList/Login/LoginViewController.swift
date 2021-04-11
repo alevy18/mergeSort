@@ -17,23 +17,33 @@ class LoginViewController: BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //sets text field delegates
         usernameTF.delegate = self
         passwordTF.delegate = self
         
-        //usernameTF.insertTextPlaceholder(with: CGSize.init(width: 2, height: 10))
      
     }
     
+    //pushes listViewController on login button push
     @IBAction func login(_ sender: UIButton) {
-        let st = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = st.instantiateViewController(identifier: ViewControllerConstants.CListViewController)
-        navigationController?.pushViewController(vc, animated: true)
+        if usernameTF.text != "" && passwordTF.text != ""{
+            let st = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = st.instantiateViewController(identifier: ViewControllerConstants.CListViewController)
+            navigationController?.pushViewController(vc, animated: true)
+        }else {
+            print("tfs can't be empty")
+            //alert
+        }
+       
     }
 
-    
+
 }
 
-extension LoginViewController: UITextFieldDelegate{
+
+
+
+extension LoginViewController{
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
         if textField.tag == 1{
@@ -56,13 +66,9 @@ extension LoginViewController: UITextFieldDelegate{
 
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
+//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+//        return true
+//    }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
     
 }

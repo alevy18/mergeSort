@@ -13,7 +13,7 @@ class LoginViewModel {
     
     
     func editPassword(changeTo: String){
-        loginStuff.username = changeTo
+        loginStuff.password = changeTo
     }
     
     func editUsername(changeTo: String){
@@ -28,6 +28,7 @@ class LoginViewModel {
         }
     }
     
+
 }
 
 
